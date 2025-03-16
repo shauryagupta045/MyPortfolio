@@ -132,18 +132,21 @@ header.sticky .nav-bar {
     width: 100%;
 }
 
-.home-container .media-icons {
+.home-container .media-icons  {
     display: flex;
     flex-direction: column;
     margin-right: 40px;
+    margin-top: 90px;
     font-size: 30px;
     gap: 25px;
     transition: 0.5s ease;
-    color: rgb(68, 6, 126);
+    color: #6a11cb;
+    
 }
 
+
 .home-container .media-icons a:hover {
-    color: blue;
+    color:#29072c;
 }
 
 .home-container .info h2 {
@@ -177,6 +180,8 @@ header.sticky .nav-bar {
 }
 
 */
+
+
 .blobpic{
     width: 350px;
     height: 350px;
@@ -187,11 +192,14 @@ header.sticky .nav-bar {
 }
 
 .blobpic img{
+    margin-top: 20px;
+    margin-left: -10px;
     width: 120%;
     height: 120%;
     object-fit: cover;
     align-items: center;
     justify-content: center;
+   
 }
 
 @keyframes flow {
@@ -360,6 +368,18 @@ header.sticky .nav-bar {
     border-bottom: 2px solid rgba(21, 21, 21, 0.87);
 
 
+}
+
+#typewriter {
+    white-space: pre-wrap;
+    overflow: hidden;
+    border-right: 2px solid #000; /* Blinking cursor effect */
+    animation: blinkCursor 0.7s steps(2) infinite;
+}
+
+@keyframes blinkCursor {
+    from { border-color: #000; }
+    to { border-color: transparent; }
 }
 
 /*skill part*/

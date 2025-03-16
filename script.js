@@ -3,18 +3,19 @@ window.addEventListener("scroll",function(){
     header.classList.toggle("sticky",window.scrollY>0);
 })
 
-const typewriterText = document.getElementById('typewriter-text');
-const textToType = 'SOFTWARE DEVELOPER';
-let charIndex = 0;
+const text = document.getElementById('typewriter').innerText;
+document.getElementById('typewriter').innerText = ''; // Clear text
 
-function typeChar() {
-  typewriterText.textContent += textToType[charIndex];
-  charIndex++;
-  if (charIndex < textToType.length) {
-    setTimeout(typeChar, 100);
-  }
+let i = 0;
+function typeWriterEffect() {
+    if (i < text.length) {
+        document.getElementById('typewriter').innerText += text.charAt(i);
+        i++;
+        setTimeout(typeWriterEffect, 5); // Adjust speed here (lower = faster)
+    }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  typeChar();
-});
+// Start typing effect on page load
+window.onload = () => {
+    typeWriterEffect();
+}
