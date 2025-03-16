@@ -19,3 +19,23 @@ function typeWriterEffect() {
 window.onload = () => {
     typeWriterEffect();
 }
+
+
+    function showSkills() {
+        document.getElementById('skills-list').style.display = 'grid';
+        document.getElementById('tools-list').style.display = 'none';
+
+        const buttons = document.querySelectorAll('.toggle-btn');
+        buttons[0].classList.add('active');
+        buttons[1].classList.remove('active');
+    }
+
+    function showTools() {
+        document.getElementById('skills-list').style.display = 'none';
+        document.getElementById('tools-list').style.display = 'grid';
+
+        const buttons = document.querySelectorAll('.toggle-btn');
+        buttons[0].classList.remove('active');
+        buttons[1].classList.add('active');
+    }
+
