@@ -3,22 +3,24 @@ window.addEventListener("scroll",function(){
     header.classList.toggle("sticky",window.scrollY>0);
 })
 
-const text = document.getElementById('typewriter').innerText;
-document.getElementById('typewriter').innerText = ''; // Clear text
+const text = document.getElementById("typewriter").innerText;
+document.getElementById("typewriter").innerText = ""; // Clear text initially
 
 let i = 0;
 function typeWriterEffect() {
-    if (i < text.length) {
-        document.getElementById('typewriter').innerText += text.charAt(i);
-        i++;
-        setTimeout(typeWriterEffect, 5); // Adjust speed here (lower = faster)
-    }
+  if (i < text.length) {
+    document.getElementById("typewriter").innerText += text.charAt(i);
+    i++;
+    setTimeout(typeWriterEffect, 50); // Slower speed (50ms per character)
+  } else {
+    document.getElementById("typewriter").style.borderRight = "none"; // Remove cursor
+  }
 }
 
 // Start typing effect on page load
 window.onload = () => {
-    typeWriterEffect();
-}
+  typeWriterEffect();
+};
 
 
     function showSkills() {
@@ -39,3 +41,77 @@ window.onload = () => {
         buttons[1].classList.add('active');
     }
 
+    const projectsData = [
+        {
+          title: "AI-Powered Study Assistant",
+          description: "A machine learning-based web application that helps students optimize their study schedules and provides personalized learning recommendations.",
+          technologies: ["Python", "TensorFlow", "React", "Flask"],
+          image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+          githubLink: "https://github.com/yourusername/study-assistant",
+          liveLink: "https://study-assistant.demo.com"
+        },
+        {
+          title: "Smart Parking System",
+          description: "IoT-based parking management system that tracks available spots in real-time and guides users to the nearest parking space.",
+          technologies: ["Arduino", "React Native", "Node.js", "MongoDB"],
+          image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&q=80&w=800",
+          githubLink: "https://github.com/yourusername/smart-parking"
+        },
+        {
+          title: "Blockchain Voting Platform",
+          description: "A secure and transparent e-voting system built on Ethereum blockchain, ensuring tamper-proof election results.",
+          technologies: ["Solidity", "Web3.js", "React", "Hardhat"],
+          image: "https://images.unsplash.com/photo-1496989981497-27d69cdad83e?auto=format&fit=crop&q=80&w=800",
+          githubLink: "https://github.com/yourusername/blockchain-voting",
+          liveLink: "https://blockchain-voting.demo.com"
+        },
+        {
+            title: "AI-Powered Study Assistant",
+            description: "A machine learning-based web application that helps students optimize their study schedules and provides personalized learning recommendations.",
+            technologies: ["Python", "TensorFlow", "React", "Flask"],
+            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+            githubLink: "https://github.com/yourusername/study-assistant",
+            liveLink: "https://study-assistant.demo.com"
+          },
+          {
+            title: "Smart Parking System",
+            description: "IoT-based parking management system that tracks available spots in real-time and guides users to the nearest parking space.",
+            technologies: ["Arduino", "React Native", "Node.js", "MongoDB"],
+            image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&q=80&w=800",
+            githubLink: "https://github.com/yourusername/smart-parking"
+          },
+          {
+            title: "Blockchain Voting Platform",
+            description: "A secure and transparent e-voting system built on Ethereum blockchain, ensuring tamper-proof election results.",
+            technologies: ["Solidity", "Web3.js", "React", "Hardhat"],
+            image: "https://images.unsplash.com/photo-1496989981497-27d69cdad83e?auto=format&fit=crop&q=80&w=800",
+            githubLink: "https://github.com/yourusername/blockchain-voting",
+            liveLink: "https://blockchain-voting.demo.com"
+          },
+          
+
+      ];
+      
+      const container = document.getElementById("projects-container");
+      
+      projectsData.forEach((project) => {
+        const card = document.createElement("div");
+        card.classList.add("project-card");
+      
+        card.innerHTML = `
+          <img src="${project.image}" alt="${project.title}" class="project-image" />
+          <div class="project-content">
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-description">${project.description}</p>
+            <div class="project-tech">
+              ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+            </div>
+            <div class="project-links">
+              <a href="${project.githubLink}" target="_blank">GitHub</a>
+              ${project.liveLink ? `<a href="${project.liveLink}" target="_blank">Live Demo</a>` : ''}
+            </div>
+          </div>
+        `;
+      
+        container.appendChild(card);
+      });
