@@ -400,132 +400,296 @@ header.sticky .nav-bar {
 }
 
 /* Education CSS */
-.education-card {
-  margin-top: 20px;
-  background: white;
+.btech-card {
+  background: linear-gradient(to bottom right, #eff6ff, #eef2ff);
   border-radius: 1.5rem;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid #dbeafe;
+  transform: translate(0);
+  transition: all 300ms;
+  opacity: 0;
+  animation: fadeUp 1s ease-out 0.4s forwards;
 }
 
-.education-section {
-  margin-bottom: 3rem;
+.btech-card:hover {
+  transform: scale(1.02);
 }
 
-.icon-container {
-  background: #e0f2fe;
-  padding: 0.75rem;
-  border-radius: 0.75rem;
+@media (min-width: 768px) {
+  .btech-card {
+      padding: 2rem;
+  }
+}
+
+.btech-content {
   display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.education-details {
-  flex: 1;
-  margin-left: 1rem;
+@media (min-width: 768px) {
+  .btech-content {
+      flex-direction: row;
+  }
 }
 
-.education-title {
+.btech-details,
+.btech-courses {
+  flex: 1 1 0%;
+}
+
+.btech-title-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.btech-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #2563eb;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.btech-degree {
   font-size: 1.5rem;
   font-weight: 700;
   color: #111827;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
-.education-subtitle {
-  font-size: 1.125rem;
-  color: #4b5563;
-  margin-left: -660px;
+.btech-specialization {
+  font-size: 1.25rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
 }
 
-.metadata {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+.btech-info-list {
+  margin-top: 0.75rem;
 }
 
-.meta-item {
-  color: #4b5563;
+.btech-info-list .info-item + .info-item {
+  margin-top: 0.75rem;
+}
+
+.info-item {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-}
-
-.achievements-list {
-  margin-top: 1.5rem;
-}
-
-.section-heading {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 0.75rem;
-}
-
-.achievement-item {
-  display: flex;
   gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  color: #4b5563;
 }
 
-.courses-container {
-  margin-top: 1.5rem;
+.info-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #2563eb;
 }
 
-.course-badge {
-  background: #eff6ff;
-  color: #1d4ed8;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  display: inline-block;
-  margin: 0.125rem;
+.courses-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.previous-education {
-  border-top: 1px solid #e5e7eb;
-  padding-top: 2rem;
+.courses-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #2563eb;
 }
 
-.previous-section-heading {
+.courses-title {
   font-size: 1.25rem;
   font-weight: 600;
   color: #111827;
-  margin-bottom: 1.5rem;
 }
 
-.previous-item {
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .courses-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.course-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #374151;
+  font-size: 0.875rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #dbeafe;
+  transform: translate(0);
+  transition: transform 200ms;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.course-item:hover {
+  transform: scale(1.05);
+}
+
+.school-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .school-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.class12-card {
+  background: linear-gradient(to bottom right, #faf5ff, #fdf2f8);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3e8ff;
+  transform: translate(0);
+  transition: verything 300ms;
+  opacity: 0;
+  animation: fadeLeft 1s ease-out 0.6s forwards;
+}
+
+.class12-card:hover {
+  transform: scale(1.02);
+}
+
+.class10-card {
+  background: linear-gradient(to bottom right, #ecfdf5, #f0fdfa);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d1fae5;
+  transform: translate(0);
+  transition: all 300ms;
+  opacity: 0;
+  animation: fadeRight 1s ease-out 0.8s forwards;
+}
+
+.class10-card:hover {
+  transform: scale(1.02);
+}
+
+.school-header {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-.school-edu {
-  gap: 0;
-  line-height: 1.5;
-  margin: 5px;
+.school-icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-.cbse {
-  margin-left: -90px;
-}
-
-.previous-icon {
-  padding: 0.75rem;
-  border-radius: 0.75rem;
-  display: flex;
-}
-
-.green-bg {
-  background: #dcfce7;
-}
-.purple-bg {
-  background: #f3e8ff;
-}
-.green-icon {
-  color: #16a34a;
-}
-.purple-icon {
+.class12-card .school-icon {
   color: #9333ea;
+}
+
+.class10-card .school-icon {
+  color: #059669;
+}
+
+.school-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.school-info-list {
+  margin-top: 0.75rem;
+}
+
+.school-info-list .info-item + .info-item {
+  margin-top: 0.75rem;
+}
+
+.class12-card .info-icon {
+  color: #9333ea;
+}
+
+.class10-card .info-icon {
+  color: #059669;
+}
+
+.stream-info {
+  margin-top: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #f3e8ff;
+  color: #4b5563;
+}
+
+.stream-label {
+  color: #7e22ce;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+      opacity: 0;
+      transform: translateX(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
 
 /* My skills - skills */

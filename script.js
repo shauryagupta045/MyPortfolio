@@ -3,6 +3,7 @@ window.addEventListener("scroll",function(){
     header.classList.toggle("sticky",window.scrollY>0);
 })
 
+
 const text = document.getElementById("typewriter").innerText;
 document.getElementById("typewriter").innerText = ""; // Clear text initially
 
