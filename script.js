@@ -4,21 +4,33 @@ window.addEventListener("scroll",function(){
 })
 
 
-const text = document.getElementById("typewriter").innerText;
-document.getElementById("typewriter").innerText = ""; // Clear text initially
+const roles = ["SOFTWARE ENGINEER ", "WEB DEVELOPER", "UI/UX DESIGNER"];
+let currentRole = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-let i = 0;
+const typewriterElement = document.getElementById("typewriter");
+
 function typeWriterEffect() {
-  if (i < text.length) {
-    document.getElementById("typewriter").innerText += text.charAt(i);
-    i++;
-    setTimeout(typeWriterEffect, 50); // Slower speed (50ms per character)
+  const currentText = roles[currentRole];
+  
+  if (isDeleting) {
+    typewriterElement.innerText = currentText.substring(0, charIndex--);
   } else {
-    document.getElementById("typewriter").style.borderRight = "none"; // Remove cursor
+    typewriterElement.innerText = currentText.substring(0, charIndex++);
   }
+
+  if (!isDeleting && charIndex === currentText.length) {
+    setTimeout(() => (isDeleting = true), 1000); 
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    currentRole = (currentRole + 1) % roles.length;
+  }
+
+  const speed = isDeleting ? 200 : 100;
+  setTimeout(typeWriterEffect, speed);
 }
 
-// Start typing effect on page load
 window.onload = () => {
   typeWriterEffect();
 };
